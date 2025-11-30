@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Icon from '@/components/ui/icon';
 import { categories } from '@/data/categories';
+import { allServices } from '@/data/services';
 
 const CategoryPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -32,7 +33,7 @@ const CategoryPage = () => {
       <Header />
       <Navigation />
 
-      <section className="py-12 bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-white">
+      <section className="py-12 bg-gradient-to-br from-primary via-primary to-[#df7e1f] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Link to="/" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors">
@@ -89,23 +90,36 @@ const CategoryPage = () => {
               </TabsList>
 
               <TabsContent value="description" className="space-y-6">
-                <Card>
-                  <CardContent className="p-6">
+                <Card className="border-0 shadow-xl rounded-2xl">
+                  <CardContent className="p-8">
                     <h2 className="text-2xl font-bold mb-4 font-heading">Описание услуг</h2>
-                    <p className="text-muted-foreground mb-6">
+                    <p className="text-muted-foreground mb-6 text-lg">
                       {category.description}
                     </p>
                     
-                    <h3 className="text-xl font-semibold mb-4">Наши услуги:</h3>
+                    <h3 className="text-xl font-semibold mb-6">Наши услуги:</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {category.services.map((service, idx) => (
-                        <div key={idx} className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors">
-                          <Icon name="CheckCircle" size={20} className="text-primary mt-1" />
-                          <div>
-                            <h4 className="font-medium">{service.name}</h4>
-                          </div>
-                        </div>
-                      ))}
+                      {allServices
+                        .filter(s => s.categorySlug === category.slug)
+                        .map((service) => (
+                          <Link
+                            key={service.id}
+                            to={`/service/${service.slug}`}
+                            className="flex items-start gap-4 p-5 bg-gradient-to-br from-white to-muted/30 rounded-2xl hover:shadow-lg transition-all duration-300 group border border-border hover:border-primary"
+                          >
+                            <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
+                              <Icon name={service.icon as any} size={24} className="text-primary" />
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-semibold mb-1 group-hover:text-primary transition-colors">{service.name}</h4>
+                              <p className="text-sm text-muted-foreground mb-2">{service.shortDescription}</p>
+                              {service.priceFrom && (
+                                <p className="text-sm font-semibold text-primary">от {service.priceFrom}</p>
+                              )}
+                            </div>
+                            <Icon name="ChevronRight" size={20} className="text-muted-foreground group-hover:text-primary transition-colors mt-1" />
+                          </Link>
+                        ))}
                     </div>
                   </CardContent>
                 </Card>
