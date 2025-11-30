@@ -3,7 +3,7 @@ import Icon from '@/components/ui/icon';
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-primary via-[#003d73] to-secondary text-white py-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-primary via-[#ff7722] to-accent text-white py-24 overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',

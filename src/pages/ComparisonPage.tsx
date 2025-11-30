@@ -30,7 +30,7 @@ const ComparisonPage = () => {
       <Header />
       <Navigation />
 
-      <section className="py-12 bg-gradient-to-br from-primary via-[#003d73] to-secondary text-white">
+      <section className="py-12 bg-gradient-to-br from-primary via-[#ff7722] to-accent text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <Link to="/" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors">

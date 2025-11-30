@@ -37,7 +37,7 @@ const ServicePage = () => {
       <Header />
       <Navigation />
 
-      <section className="relative py-20 bg-gradient-to-br from-primary via-[#003d73] to-secondary text-white overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-primary via-[#ff7722] to-accent text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
