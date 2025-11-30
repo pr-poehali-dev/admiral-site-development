@@ -13,13 +13,11 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">A23</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-primary font-heading">АДМИРАЛ-23</h1>
-              <p className="text-xs text-muted-foreground">Производственная компания</p>
-            </div>
+            <img 
+              src="https://admiral23.ru/wp-content/uploads/2025/03/admiral-logo.png" 
+              alt="Адмирал-23" 
+              className="h-14 w-auto object-contain"
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-4">

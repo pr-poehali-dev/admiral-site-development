@@ -19,7 +19,7 @@ const CTA = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-primary via-[#003d73] to-secondary text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 animate-fade-in">

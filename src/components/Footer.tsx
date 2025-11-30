@@ -7,14 +7,12 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A23</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg font-heading">АДМИРАЛ-23</h3>
-                <p className="text-xs text-white/70">Производственная компания</p>
-              </div>
+            <div className="mb-4">
+              <img 
+                src="https://admiral23.ru/wp-content/uploads/2025/03/admiral-logo.png" 
+                alt="Адмирал-23" 
+                className="h-14 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <div className="flex gap-3 mt-4">
               <a
